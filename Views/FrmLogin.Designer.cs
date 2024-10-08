@@ -112,7 +112,7 @@
             pictureBox1.Image = Properties.Resources.parede_de_gradiente_roxo_sala_de_estudio_em_branco_fundo_de_estudio_simples_570543_7224;
             pictureBox1.Location = new Point(-2, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(364, 297);
+            pictureBox1.Size = new Size(371, 309);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -122,7 +122,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkOrchid;
-            ClientSize = new Size(360, 296);
+            ClientSize = new Size(368, 311);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCadastrar);
@@ -133,6 +133,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
