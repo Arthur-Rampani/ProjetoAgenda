@@ -39,6 +39,8 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             btnCancelar = new Button();
+            label5 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // txtBoxUsuario
             // 
             txtBoxUsuario.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxUsuario.Location = new Point(32, 122);
+            txtBoxUsuario.Location = new Point(32, 124);
             txtBoxUsuario.Name = "txtBoxUsuario";
             txtBoxUsuario.Size = new Size(301, 39);
             txtBoxUsuario.TabIndex = 0;
@@ -63,7 +65,7 @@
             // txtBoxSenha
             // 
             txtBoxSenha.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxSenha.Location = new Point(32, 208);
+            txtBoxSenha.Location = new Point(31, 307);
             txtBoxSenha.Name = "txtBoxSenha";
             txtBoxSenha.Size = new Size(301, 39);
             txtBoxSenha.TabIndex = 0;
@@ -74,7 +76,7 @@
             btnCadastrar.BackColor = Color.Purple;
             btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(32, 373);
+            btnCadastrar.Location = new Point(21, 449);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(134, 76);
             btnCadastrar.TabIndex = 1;
@@ -112,16 +114,17 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(32, 175);
+            label3.Location = new Point(32, 274);
             label3.Name = "label3";
             label3.Size = new Size(57, 21);
             label3.TabIndex = 2;
             label3.Text = "Senha";
+            label3.Click += label3_Click;
             // 
             // txtBoxRepetirSenha
             // 
             txtBoxRepetirSenha.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxRepetirSenha.Location = new Point(32, 303);
+            txtBoxRepetirSenha.Location = new Point(31, 404);
             txtBoxRepetirSenha.Name = "txtBoxRepetirSenha";
             txtBoxRepetirSenha.Size = new Size(301, 39);
             txtBoxRepetirSenha.TabIndex = 0;
@@ -133,7 +136,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(32, 267);
+            label4.Location = new Point(32, 361);
             label4.Name = "label4";
             label4.Size = new Size(123, 21);
             label4.TabIndex = 2;
@@ -144,7 +147,7 @@
             pictureBox1.Image = Properties.Resources.parede_de_gradiente_roxo_sala_de_estudio_em_branco_fundo_de_estudio_simples_570543_7224;
             pictureBox1.Location = new Point(0, -1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(346, 479);
+            pictureBox1.Size = new Size(435, 548);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -154,7 +157,7 @@
             btnCancelar.BackColor = Color.Red;
             btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelar.Location = new Point(199, 373);
+            btnCancelar.Location = new Point(185, 449);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(134, 76);
             btnCancelar.TabIndex = 4;
@@ -162,19 +165,43 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(32, 181);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 21);
+            label5.TabIndex = 2;
+            label5.Text = "Telefone";
+            label5.Click += label3_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(32, 218);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(301, 39);
+            textBox1.TabIndex = 0;
+            textBox1.TextChanged += txtBoxSenha_TextChanged;
+            // 
             // FrmCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 128, 255);
-            ClientSize = new Size(345, 477);
+            ClientSize = new Size(435, 546);
             Controls.Add(btnCancelar);
             Controls.Add(label4);
+            Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCadastrar);
             Controls.Add(txtBoxRepetirSenha);
+            Controls.Add(textBox1);
             Controls.Add(txtBoxSenha);
             Controls.Add(txtBoxUsuario);
             Controls.Add(txtBoxNome);
@@ -200,5 +227,7 @@
         private Label label4;
         private PictureBox pictureBox1;
         private Button btnCancelar;
+        private Label label5;
+        private TextBox textBox1;
     }
 }
