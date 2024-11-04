@@ -130,6 +130,7 @@
             txtBoxRepetirSenha.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBoxRepetirSenha.Location = new Point(31, 344);
             txtBoxRepetirSenha.Name = "txtBoxRepetirSenha";
+            txtBoxRepetirSenha.PasswordChar = '*';
             txtBoxRepetirSenha.Size = new Size(301, 39);
             txtBoxRepetirSenha.TabIndex = 0;
             txtBoxRepetirSenha.TextChanged += txtBoxSenha_TextChanged;
@@ -208,6 +209,7 @@
             txtBoxSenhaoficial.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBoxSenhaoficial.Location = new Point(30, 268);
             txtBoxSenhaoficial.Name = "txtBoxSenhaoficial";
+            txtBoxSenhaoficial.PasswordChar = '*';
             txtBoxSenhaoficial.Size = new Size(301, 39);
             txtBoxSenhaoficial.TabIndex = 0;
             txtBoxSenhaoficial.TextChanged += txtBoxSenha_TextChanged;
