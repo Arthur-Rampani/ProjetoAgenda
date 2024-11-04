@@ -22,7 +22,7 @@ namespace ProjetoAgenda
         {
             UsuarioController controleUsuario = new UsuarioController();
 
-            bool resultado = controleUsuario.ValidarLogin("AlexLindo", "Arthur");
+            bool resultado = controleUsuario.ValidarLogin("Arthur", "Didico2008");
 
             MessageBox.Show(resultado.ToString());
         }
