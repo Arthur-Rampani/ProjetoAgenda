@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoAgenda.Controller;
+using ProjetoAgenda.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,13 +41,27 @@ namespace ProjetoAgenda
 
         private void txtBoxUsuario_TextChanged(object sender, EventArgs e)
         {
-            
+           
            HabilitarBotaoLogin();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            UsuarioController controleUsuario = new UsuarioController();
 
+            bool resultado = controleUsuario.ValidarLogin(txtBoxUsuario.Text, txtBoxSenha.Text);
+
+            if (resultado == true)
+            {
+                FrmPrincipal FormularioTeste = new FrmPrincipal();
+                FormularioTeste.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum cadastro encontrado");
+            }
+
+            
         }
 
         private void txtBoxSenha_TextChanged(object sender, EventArgs e)
