@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProjetoAgenda.Controller;
 using ProjetoAgenda.Data;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,11 @@ namespace ProjetoAgenda.Views
         {
             FrmCategorias FormularioTeste = new FrmCategorias();
             FormularioTeste.ShowDialog();
+        }
 
-
+        private void arquivoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

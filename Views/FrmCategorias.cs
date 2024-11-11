@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoAgenda.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace ProjetoAgenda.Views
             InitializeComponent();
         }
 
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -26,7 +27,25 @@ namespace ProjetoAgenda.Views
 
         private void txtBoxRegistrarCategoria_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            string categoria = txtBoxRegistrarCategoria.Text;
+            CategoriaController controleCategoria = new CategoriaController();
+            controleCategoria.AddCategoria(categoria);
+
             
+
+
+        }
+
+        private void FrmCategorias_Load(object sender, EventArgs e)
+        {
+            CategoriaController controleCategorias = new CategoriaController();
+            DataTable tabela = controleCategorias.GetCategorias();
+            dgvCategorias.DataSource = tabela;
         }
     }
 }

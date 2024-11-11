@@ -31,6 +31,8 @@
             txtBoxRegistrarCategoria = new TextBox();
             label1 = new Label();
             btnRegistrar = new Button();
+            dgvCategorias = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             SuspendLayout();
             // 
             // txtBoxRegistrarCategoria
@@ -61,17 +63,29 @@
             btnRegistrar.TabIndex = 2;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // dgvCategorias
+            // 
+            dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategorias.Location = new Point(239, 105);
+            dgvCategorias.Name = "dgvCategorias";
+            dgvCategorias.Size = new Size(240, 150);
+            dgvCategorias.TabIndex = 3;
             // 
             // FrmCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(231, 131);
+            ClientSize = new Size(491, 276);
+            Controls.Add(dgvCategorias);
             Controls.Add(btnRegistrar);
             Controls.Add(label1);
             Controls.Add(txtBoxRegistrarCategoria);
             Name = "FrmCategorias";
             Text = "FrmCategorias";
+            Load += FrmCategorias_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,5 +95,6 @@
         private TextBox txtBoxRegistrarCategoria;
         private Label label1;
         private Button btnRegistrar;
+        private DataGridView dgvCategorias;
     }
 }
