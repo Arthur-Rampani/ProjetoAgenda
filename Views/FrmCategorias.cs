@@ -35,6 +35,10 @@ namespace ProjetoAgenda.Views
             string categoria = txtBoxRegistrarCategoria.Text;
             CategoriaController controleCategoria = new CategoriaController();
             controleCategoria.AddCategoria(categoria);
+
+            CategoriaController controleCategorias = new CategoriaController();
+            DataTable tabela = controleCategorias.GetCategorias();
+            dgvCategorias.DataSource = tabela;
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
@@ -50,6 +54,10 @@ namespace ProjetoAgenda.Views
             int categoria = Convert.ToInt32(txtBoxRegistrarCategoria.Text);
             CategoriaController excluircategoria = new CategoriaController();
             excluircategoria.ExcluirCategoria(categoria);
+
+            CategoriaController controleCategorias = new CategoriaController();
+            DataTable tabela = controleCategorias.GetCategorias();
+            dgvCategorias.DataSource = tabela;
         }
     }
 }

@@ -40,5 +40,11 @@ namespace ProjetoAgenda.Views
         {
             this.Close();
         }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios FormularioTeste = new FrmUsuarios();
+            FormularioTeste.ShowDialog();
+        }
     }
 }

@@ -111,7 +111,7 @@ namespace ProjetoAgenda.Controller
 
                 if (linhasAfetadas > 0)
                 {
-                    MessageBox.Show("Categoria cadastrada com sucesso!");
+                    MessageBox.Show("Categoria excluida com sucesso!");
                     return true;
                 }
                 else
@@ -121,7 +121,7 @@ namespace ProjetoAgenda.Controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Erro ao excluir: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 

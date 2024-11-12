@@ -33,13 +33,14 @@
             btnRegistrar = new Button();
             dgvCategorias = new DataGridView();
             button1 = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             SuspendLayout();
             // 
             // txtBoxRegistrarCategoria
             // 
             txtBoxRegistrarCategoria.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBoxRegistrarCategoria.Location = new Point(8, 80);
+            txtBoxRegistrarCategoria.Location = new Point(8, 49);
             txtBoxRegistrarCategoria.Name = "txtBoxRegistrarCategoria";
             txtBoxRegistrarCategoria.Size = new Size(207, 35);
             txtBoxRegistrarCategoria.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(8, 27);
+            label1.Location = new Point(8, 12);
             label1.Name = "label1";
             label1.Size = new Size(207, 25);
             label1.TabIndex = 1;
@@ -62,9 +63,9 @@
             btnRegistrar.BackColor = Color.White;
             btnRegistrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.Black;
-            btnRegistrar.Location = new Point(12, 136);
+            btnRegistrar.Location = new Point(8, 90);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(194, 83);
+            btnRegistrar.Size = new Size(207, 67);
             btnRegistrar.TabIndex = 2;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
@@ -80,19 +81,33 @@
             // 
             // button1
             // 
-            button1.Location = new Point(58, 235);
+            button1.BackColor = Color.Red;
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(12, 200);
             button1.Name = "button1";
-            button1.Size = new Size(105, 32);
+            button1.Size = new Size(203, 67);
             button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Excluir";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 172);
+            label2.Name = "label2";
+            label2.Size = new Size(192, 25);
+            label2.TabIndex = 5;
+            label2.Text = "Exclua sua categoria";
             // 
             // FrmCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(491, 276);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(dgvCategorias);
             Controls.Add(btnRegistrar);
@@ -113,5 +128,6 @@
         private Button btnRegistrar;
         private DataGridView dgvCategorias;
         private Button button1;
+        private Label label2;
     }
 }
