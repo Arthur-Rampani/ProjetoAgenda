@@ -78,6 +78,7 @@
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.Size = new Size(241, 252);
             dgvCategorias.TabIndex = 3;
+            dgvCategorias.CellContentClick += dgvCategorias_CellContentClick;
             // 
             // button1
             // 

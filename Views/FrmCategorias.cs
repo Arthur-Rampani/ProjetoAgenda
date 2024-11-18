@@ -59,5 +59,10 @@ namespace ProjetoAgenda.Views
             DataTable tabela = controleCategorias.GetCategorias();
             dgvCategorias.DataSource = tabela;
         }
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
