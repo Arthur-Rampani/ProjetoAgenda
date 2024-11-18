@@ -41,8 +41,8 @@ namespace ProjetoAgenda
 
         private void txtBoxUsuario_TextChanged(object sender, EventArgs e)
         {
-           
-           HabilitarBotaoLogin();
+
+            HabilitarBotaoLogin();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -61,12 +61,17 @@ namespace ProjetoAgenda
                 MessageBox.Show("Nenhum cadastro encontrado");
             }
 
-            
+
         }
 
         private void txtBoxSenha_TextChanged(object sender, EventArgs e)
         {
             HabilitarBotaoLogin();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

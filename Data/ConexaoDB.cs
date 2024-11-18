@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,15 @@ namespace ProjetoAgenda.Data
             string stringConexao = "server=localhost;Database=dbAgenda;User ID=root;Password=root;";
 
             //Criando a conexão
+            MySqlConnection conexao = new MySqlConnection(stringConexao);
+
+            return conexao;
+        }
+
+        static public MySqlConnection CriarConexao(string usuario, string senha)
+        {
+            string stringConexao = @$"server=%;Database=dbAgenda;User ID={usuario};Password={senha};";
+
             MySqlConnection conexao = new MySqlConnection(stringConexao);
 
             return conexao;
