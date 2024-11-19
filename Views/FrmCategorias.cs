@@ -51,7 +51,7 @@ namespace ProjetoAgenda.Views
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int categoria = Convert.ToInt32(txtBoxRegistrarCategoria.Text);
+            int categoria = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells[0].Value);
             CategoriaController excluircategoria = new CategoriaController();
             excluircategoria.ExcluirCategoria(categoria);
 

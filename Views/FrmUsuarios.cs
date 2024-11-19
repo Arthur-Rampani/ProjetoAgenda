@@ -27,13 +27,28 @@ namespace ProjetoAgenda.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            string usuario = txtBoxExcluir.Text;
+            string usuario = Convert.ToString(dgvUsuarios.SelectedRows[0].Cells[0].Value);
             UsuarioController excluirusuario = new UsuarioController();
-            excluirusuario.ExcluirUsuario(usuario);
+            bool resultado = excluirusuario.ExcluirUsuario(usuario);
 
-            UsuarioController controleUsuarios = new UsuarioController();
-            DataTable tabela = controleUsuarios.GetUsuarios();
-            dgvUsuarios.DataSource = tabela;
+            if (resultado)
+            {
+                DialogResult result = MessageBox.Show("Exclusão Concluída!");
+
+                if (result == DialogResult.OK)
+                {
+                    UsuarioController controleUsuarios = new UsuarioController();
+                    DataTable tabela = controleUsuarios.GetUsuarios();
+
+                    dgvUsuarios.DataSource = tabela;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Exclusão não foi Concluída");
+            }
+
+           
         }
     }
 }

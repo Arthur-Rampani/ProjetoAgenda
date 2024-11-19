@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Expr;
 using ProjetoAgenda.Data;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace ProjetoAgenda.Controller
 {
@@ -20,9 +22,8 @@ namespace ProjetoAgenda.Controller
                 MySqlConnection conexao = ConexaoDB.CriarConexao();
 
                 //Comando SQL que será executado
-                string sql = $@"INSERT INTO tbUsuarios(nome, usuario, telefone, senha) VALUES (@nome, @usuario, @telefone, @senha)
-                                CREATE USER '{@usuario}@'%' IDENTIFIED BY {@senha}';
-                                GRANT SELECT, INSERT, DELETE, UPDATE ON dbagenda.* TO '{usuario}@'%';";
+                string sql = $@"INSERT INTO tbUsuarios(nome, usuario, telefone, senha) VALUES (@nome, @usuario, @telefone, @senha)";
+                                
 
 
                 //Abre a conexão com o banco
@@ -41,16 +42,24 @@ namespace ProjetoAgenda.Controller
                 //Executando no banco de dados
                 int linhasAfetadas = comando.ExecuteNonQuery();
 
-                conexao.Close();
+                
 
                 if (linhasAfetadas > 0)
                 {
-                    return true;
+                   string sql2 = $@"CREATE USER '{@usuario}'@'%' IDENTIFIED BY '{@senha}';
+                   GRANT ALL PRIVILEGES ON dbagenda.* TO '{usuario}'@'%';";
+                   comando = new MySqlCommand(sql2, conexao);
+
+                   linhasAfetadas = comando.ExecuteNonQuery();
+
+                   return true;
                 }
                 else
                 {
                     return false;
                 }
+
+                conexao.Close();
             }
             catch (Exception erro)
             {
@@ -107,7 +116,7 @@ namespace ProjetoAgenda.Controller
 
                 //Montei o SELECT que retorna todas os usuarios
                 string sql = @"select nome AS 'Nome', usuario AS 'Usuário', telefone AS 'Telefone', 
-                               senhas AS 'Senha' from tbusuarios;";
+                               senha AS 'Senha' from tbusuarios;";
 
                 conexao.Open();
 
@@ -141,7 +150,7 @@ namespace ProjetoAgenda.Controller
             {
                 conexao = ConexaoDB.CriarConexao();
 
-                string sql = "delete from tbusuarios where usuario = @usuario;";
+                string sql = "delete from tbusuarios where usuario = usuario;";
 
                 conexao.Open();
 

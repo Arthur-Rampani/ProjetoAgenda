@@ -1,4 +1,5 @@
-﻿using ProjetoAgenda.Controller;
+﻿using MySqlX.XDevAPI;
+using ProjetoAgenda.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjetoAgenda.VariableGlobal;
 
 namespace ProjetoAgenda
 {
@@ -18,13 +20,18 @@ namespace ProjetoAgenda
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            UsuarioController controleUsuario = new UsuarioController();
+            Usersession.Usuario = textBox1.Text;
+            Usersession.Senha = textBox2.Text;
+            Usersession.Nome = textBox3.Text;
+        }
 
-            bool resultado = controleUsuario.ValidarLogin("Arthur", "Didico2008");
-
-            MessageBox.Show(resultado.ToString());
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Usersession.Usuario);
+            MessageBox.Show(Usersession.Senha);
+            MessageBox.Show(Usersession.Nome);
         }
     }
 }

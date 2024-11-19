@@ -9,9 +9,23 @@ CREATE TABLE tbusuarios(
 
 CREATE TABLE tbcategoria(
 	id_categoria int primary key auto_increment, 
-    categoria varchar(30) not null
+    categoria varchar(30) not null, 
+    usuario varchar(30) not null
     );
 
 //Mudar os nomes das tabelas
 select id_categoria AS 'Código', categoria AS 'Categoria'
 from tbcategoria;
+
+DELIMITER //
+CREATE TRIGGER trinsertcategoria
+BEFORE
+INSERT
+ON tbcategoria
+FOR EACH ROW
+BEGIN
+	SET NEW.usuario = CURRENT_USER();
+END;
+//
+
+DELIMITER ;

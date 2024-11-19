@@ -31,7 +31,6 @@
             label1 = new Label();
             dgvUsuarios = new DataGridView();
             btnExcluir = new Button();
-            txtBoxExcluir = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -39,18 +38,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(22, 9);
+            label1.Location = new Point(63, 19);
             label1.Name = "label1";
-            label1.Size = new Size(158, 25);
+            label1.Size = new Size(202, 32);
             label1.TabIndex = 0;
             label1.Text = "Exclua o usuário";
             // 
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Location = new Point(238, 12);
+            dgvUsuarios.Location = new Point(12, 162);
+            dgvUsuarios.Margin = new Padding(3, 4, 3, 4);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(281, 287);
+            dgvUsuarios.RowHeadersWidth = 51;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsuarios.Size = new Size(442, 383);
             dgvUsuarios.TabIndex = 1;
             // 
             // btnExcluir
@@ -58,31 +60,24 @@
             btnExcluir.BackColor = Color.Red;
             btnExcluir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(6, 79);
+            btnExcluir.Location = new Point(12, 65);
+            btnExcluir.Margin = new Padding(3, 4, 3, 4);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(207, 67);
+            btnExcluir.Size = new Size(321, 89);
             btnExcluir.TabIndex = 2;
-            btnExcluir.Text = "Sair";
+            btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
-            // txtBoxExcluir
-            // 
-            txtBoxExcluir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBoxExcluir.Location = new Point(6, 40);
-            txtBoxExcluir.Name = "txtBoxExcluir";
-            txtBoxExcluir.Size = new Size(207, 33);
-            txtBoxExcluir.TabIndex = 3;
-            // 
             // FrmUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(537, 450);
-            Controls.Add(txtBoxExcluir);
+            ClientSize = new Size(516, 600);
             Controls.Add(btnExcluir);
             Controls.Add(dgvUsuarios);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmUsuarios";
             Text = "FrmUsuarios";
             Load += FrmUsuarios_Load;
@@ -96,6 +91,5 @@
         private Label label1;
         private DataGridView dgvUsuarios;
         private Button btnExcluir;
-        private TextBox txtBoxExcluir;
     }
 }
