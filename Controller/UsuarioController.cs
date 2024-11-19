@@ -150,7 +150,7 @@ namespace ProjetoAgenda.Controller
             {
                 conexao = ConexaoDB.CriarConexao();
 
-                string sql = "delete from tbusuarios where usuario = usuario;";
+                string sql = "delete from tbusuarios where usuario = @usuario;";
 
                 conexao.Open();
 
