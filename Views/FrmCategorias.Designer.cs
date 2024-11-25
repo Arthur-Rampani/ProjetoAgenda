@@ -31,9 +31,11 @@
             label1 = new Label();
             btnRegistrar = new Button();
             dgvCategorias = new DataGridView();
-            button1 = new Button();
+            btnExcluir = new Button();
             label2 = new Label();
             txtBoxRegistrarCategoria = new TextBox();
+            label3 = new Label();
+            btnAlterar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             SuspendLayout();
             // 
@@ -41,9 +43,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(9, 16);
+            label1.Location = new Point(8, 9);
             label1.Name = "label1";
-            label1.Size = new Size(267, 32);
+            label1.Size = new Size(207, 25);
             label1.TabIndex = 1;
             label1.Text = "Registre sua categoria";
             label1.Click += label1_Click;
@@ -53,10 +55,9 @@
             btnRegistrar.BackColor = Color.White;
             btnRegistrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.Black;
-            btnRegistrar.Location = new Point(9, 120);
-            btnRegistrar.Margin = new Padding(3, 4, 3, 4);
+            btnRegistrar.Location = new Point(8, 72);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(237, 89);
+            btnRegistrar.Size = new Size(207, 44);
             btnRegistrar.TabIndex = 2;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
@@ -65,62 +66,82 @@
             // dgvCategorias
             // 
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategorias.Location = new Point(272, 16);
-            dgvCategorias.Margin = new Padding(3, 4, 3, 4);
+            dgvCategorias.Location = new Point(238, 12);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.RowHeadersWidth = 51;
             dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategorias.Size = new Size(275, 336);
+            dgvCategorias.Size = new Size(241, 252);
             dgvCategorias.TabIndex = 3;
             dgvCategorias.CellContentClick += dgvCategorias_CellContentClick;
             // 
-            // button1
+            // btnExcluir
             // 
-            button1.BackColor = Color.Red;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(14, 267);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(232, 89);
-            button1.TabIndex = 4;
-            button1.Text = "Excluir";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            btnExcluir.BackColor = Color.Red;
+            btnExcluir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(12, 147);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(207, 44);
+            btnExcluir.TabIndex = 4;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += button1_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 229);
+            label2.Location = new Point(12, 119);
             label2.Name = "label2";
-            label2.Size = new Size(247, 32);
+            label2.Size = new Size(192, 25);
             label2.TabIndex = 5;
             label2.Text = "Exclua sua categoria";
             // 
             // txtBoxRegistrarCategoria
             // 
-            txtBoxRegistrarCategoria.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBoxRegistrarCategoria.Location = new Point(9, 65);
-            txtBoxRegistrarCategoria.Margin = new Padding(3, 4, 3, 4);
+            txtBoxRegistrarCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtBoxRegistrarCategoria.Location = new Point(8, 37);
             txtBoxRegistrarCategoria.Name = "txtBoxRegistrarCategoria";
-            txtBoxRegistrarCategoria.Size = new Size(236, 42);
+            txtBoxRegistrarCategoria.Size = new Size(207, 29);
             txtBoxRegistrarCategoria.TabIndex = 0;
             txtBoxRegistrarCategoria.TextAlign = HorizontalAlignment.Center;
             txtBoxRegistrarCategoria.TextChanged += txtBoxRegistrarCategoria_TextChanged;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 194);
+            label3.Name = "label3";
+            label3.Size = new Size(188, 25);
+            label3.TabIndex = 5;
+            label3.Text = "Altere sua categoria";
+            // 
+            // btnAlterar
+            // 
+            btnAlterar.BackColor = Color.White;
+            btnAlterar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlterar.Location = new Point(12, 222);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(207, 44);
+            btnAlterar.TabIndex = 6;
+            btnAlterar.Text = "Alterar";
+            btnAlterar.UseVisualStyleBackColor = false;
+            btnAlterar.Click += btnAlterar_Click;
+            // 
             // FrmCategorias
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(561, 368);
+            ClientSize = new Size(491, 276);
+            Controls.Add(btnAlterar);
+            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button1);
+            Controls.Add(btnExcluir);
             Controls.Add(dgvCategorias);
             Controls.Add(btnRegistrar);
             Controls.Add(label1);
             Controls.Add(txtBoxRegistrarCategoria);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmCategorias";
             Text = "FrmCategorias";
             Load += FrmCategorias_Load;
@@ -133,8 +154,10 @@
         private Label label1;
         private Button btnRegistrar;
         private DataGridView dgvCategorias;
-        private Button button1;
+        private Button btnExcluir;
         private Label label2;
         private TextBox txtBoxRegistrarCategoria;
+        private Label label3;
+        private Button btnAlterar;
     }
 }

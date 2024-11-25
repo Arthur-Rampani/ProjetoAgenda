@@ -17,7 +17,7 @@ namespace ProjetoAgenda.Controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = ConexaoDB.CriarConexao(Usersession.Nome, Usersession.Usuario);
+                conexao = ConexaoDB.CriarConexao();
 
 
                 string sql = "INSERT INTO tbcategoria(categoria) VALUES (@categoria);";
@@ -131,6 +131,49 @@ namespace ProjetoAgenda.Controller
             {
                 conexao.Close();
             }  
+        }
+
+        public bool AlterarCategoria(string categoria, int id_categoria)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+
+
+                string sql = "UPDATE tbcategoria set categoria = @categoria WHERE id_categoria = @id_categoria;";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@categoria", categoria);
+                comando.Parameters.AddWithValue("@id_categoria", id_categoria);
+
+
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                if (linhasAfetadas > 0)
+                {
+                    MessageBox.Show("Categoria alterada com sucesso!");
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
+            }
+                catch (Exception erro)
+                {
+                MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+                }
+
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

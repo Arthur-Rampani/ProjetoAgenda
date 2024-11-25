@@ -64,5 +64,17 @@ namespace ProjetoAgenda.Views
         {
 
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            
+            int categoria = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells[0].Value);
+            CategoriaController alterarcategoria = new CategoriaController();
+            alterarcategoria.AlterarCategoria(txtBoxRegistrarCategoria.Text, categoria);
+
+            CategoriaController controleCategorias = new CategoriaController();
+            DataTable tabela = controleCategorias.GetCategorias();
+            dgvCategorias.DataSource = tabela;
+        }
     }
 }

@@ -29,3 +29,24 @@ END;
 //
 
 DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trlogcategoriadelete
+AFTER
+DELETE
+ON tbcategoria
+FOR EACH ROW
+BEGIN
+	INSERT INTO tblog(
+    usuario, 
+    data_hora, 
+    descricao)
+    VALUES
+    (USER(),
+	CURRENT_TIMESTAMP(), 
+	CONCAT("A categoria ", OLD.categoria, " foi excluída.")
+	);
+END;
+//
+
+DELIMITER ;
