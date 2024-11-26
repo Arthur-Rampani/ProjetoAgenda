@@ -186,5 +186,48 @@ namespace ProjetoAgenda.Controller
                 conexao.Close();
             }
         }
+
+        public bool AlterarSenha(string senha, string usuario)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
+
+
+                string sql = "UPDATE tbcategoria set senha = @senha WHERE usuario = @usuario;";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@senha", senha);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+
+
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                if (linhasAfetadas > 0)
+                {
+                    MessageBox.Show("Categoria alterada com sucesso!");
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

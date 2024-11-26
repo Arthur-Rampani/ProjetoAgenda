@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoAgenda.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace ProjetoAgenda.Views
         public FrmAgenda()
         {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAgenda_Load(object sender, EventArgs e)
+        {
+            CategoriaController controleCategoria = new CategoriaController();
+            DataTable tabela = controleCategoria.GetCategorias();
+            comboBoxCategorias.DataSource = tabela;
+            comboBoxCategorias.DisplayMember = "categoria";
+            comboBoxCategorias.ValueMember = "código";
         }
     }
 }

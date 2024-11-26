@@ -48,7 +48,15 @@ namespace ProjetoAgenda.Views
                 MessageBox.Show("Exclusão não foi Concluída");
             }
 
-           
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+            UsuarioController controleUsuarios = new UsuarioController();
+            DataTable tabela = controleUsuarios.GetUsuarios();
+            dgvUsuarios.DataSource = tabela;
         }
     }
 }
