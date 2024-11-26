@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Expr;
 using ProjetoAgenda.Data;
+using ProjetoAgenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -47,7 +48,8 @@ namespace ProjetoAgenda.Controller
                 if (linhasAfetadas > 0)
                 {
                    string sql2 = $@"CREATE USER '{@usuario}'@'%' IDENTIFIED BY '{@senha}';
-                   GRANT ALL PRIVILEGES ON dbagenda.* TO '{usuario}'@'%';";
+                   GRANT ALL PRIVILEGES ON dbagenda.* TO '{usuario}'@'%'; 
+                   FLUSH PRIVILEGES;";
                    comando = new MySqlCommand(sql2, conexao);
 
                    linhasAfetadas = comando.ExecuteNonQuery();
@@ -74,7 +76,7 @@ namespace ProjetoAgenda.Controller
             {
                 MySqlConnection conexao = ConexaoDB.CriarConexao();
 
-                string sql = @"select * from tbusuarios 
+                string sql = @"select usuario, senha, nome, telefone from tbusuarios 
                                where usuario = @usuario
                                and binary senha = @senha;";
 
@@ -89,6 +91,9 @@ namespace ProjetoAgenda.Controller
 
                 if (resultado.Read())
                 {
+                    Usersession.Usuario = resultado.GetString("usuario");
+                    Usersession.Nome = resultado.GetString("nome");
+                    Usersession.Senha = resultado.GetString("senha");
                     conexao.Close();
                     return true;
                 }

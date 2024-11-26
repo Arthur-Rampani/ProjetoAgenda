@@ -23,7 +23,6 @@ namespace ProjetoAgenda.VariableGlobal
         {
             get { return _usuario; }
             set {
-                value = value.ToUpper();
                 _usuario =  value; 
             }
         }
@@ -33,7 +32,6 @@ namespace ProjetoAgenda.VariableGlobal
             get { return _senha; }
             set
             {
-                value = value.ToUpper();
                 _senha = value;
             }
         }
@@ -43,7 +41,6 @@ namespace ProjetoAgenda.VariableGlobal
             get { return _nome; }
             set
             {
-                value = value.ToUpper();
                 _nome = value;
             }
         }

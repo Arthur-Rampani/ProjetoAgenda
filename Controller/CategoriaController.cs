@@ -17,7 +17,7 @@ namespace ProjetoAgenda.Controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
 
                 string sql = "INSERT INTO tbcategoria(categoria) VALUES (@categoria);";
@@ -138,7 +138,7 @@ namespace ProjetoAgenda.Controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
 
                 string sql = "UPDATE tbcategoria set categoria = @categoria WHERE id_categoria = @id_categoria;";

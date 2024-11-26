@@ -18,6 +18,7 @@ namespace ProjetoAgenda.Views
         public FrmPrincipal()
         {
             InitializeComponent();
+            Nomebemvindo.Text = $"Seja bem vindo {VariableGlobal.Usersession.Nome}";
         }
 
         private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +45,17 @@ namespace ProjetoAgenda.Views
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmUsuarios FormularioTeste = new FrmUsuarios();
+            FormularioTeste.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAgenda FormularioTeste = new FrmAgenda();
             FormularioTeste.ShowDialog();
         }
     }

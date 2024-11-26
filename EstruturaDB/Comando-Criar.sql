@@ -17,6 +17,12 @@ CREATE TABLE tbcategoria(
 select id_categoria AS 'Código', categoria AS 'Categoria'
 from tbcategoria;
 
+CREATE TABLE tblog(
+id_log int auto_increment primary key, 
+usuario varchar(30), 
+data_hora timestamp not null, 
+descricao varchar (100));
+
 DELIMITER //
 CREATE TRIGGER trinsertcategoria
 BEFORE
