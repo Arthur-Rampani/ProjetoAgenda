@@ -56,3 +56,24 @@ END;
 //
 
 DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trupdatecategoria
+AFTER
+UPDATE
+ON tbcategoria
+FOR EACH ROW
+BEGIN
+	INSERT INTO tblog(
+    usuario, 
+    data_hora, 
+    descricao)
+    VALUES
+    (USER(),
+	CURRENT_TIMESTAMP(), 
+	CONCAT("A categoria ", NEW.categoria, " foi alterada.")
+	);
+END;
+//
+
+DELIMITER ;

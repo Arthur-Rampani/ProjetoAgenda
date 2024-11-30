@@ -47,7 +47,7 @@ namespace ProjetoAgenda.Controller
 
                 if (linhasAfetadas > 0)
                 {
-                   string sql2 = $@"CREATE USER '{@usuario}'@'%' IDENTIFIED BY '{@senha}';
+                   string sql2 = $@"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';
                    GRANT ALL PRIVILEGES ON dbagenda.* TO '{usuario}'@'%'; 
                    FLUSH PRIVILEGES;";
                    comando = new MySqlCommand(sql2, conexao);
