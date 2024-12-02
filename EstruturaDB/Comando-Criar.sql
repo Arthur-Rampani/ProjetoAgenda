@@ -13,15 +13,21 @@ CREATE TABLE tbcategoria(
     usuario varchar(30) not null
     );
 
-//Mudar os nomes das tabelas
-select id_categoria AS 'Código', categoria AS 'Categoria'
-from tbcategoria;
-
 CREATE TABLE tblog(
 id_log int auto_increment primary key, 
 usuario varchar(30), 
 data_hora timestamp not null, 
 descricao varchar (100));
+
+CREATE TABLE tbcontato(
+id_contato int(30) primary key auto_increment, 
+contato varchar(30) not null, 
+telefone int(30) not null, 
+categoria varchar(30) not null);
+
+//Mudar os nomes das tabelas
+select id_categoria AS 'Código', categoria AS 'Categoria'
+from tbcategoria;
 
 DELIMITER //
 CREATE TRIGGER trinsertcategoria

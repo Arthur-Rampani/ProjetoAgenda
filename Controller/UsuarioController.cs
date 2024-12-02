@@ -167,7 +167,7 @@ namespace ProjetoAgenda.Controller
 
                 if (linhasAfetadas > 0)
                 {
-                    MessageBox.Show("Categoria excluida com sucesso!");
+                    MessageBox.Show("Usuário excluído com sucesso!");
                     return true;
                 }
                 else

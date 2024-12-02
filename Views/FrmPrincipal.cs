@@ -18,7 +18,7 @@ namespace ProjetoAgenda.Views
         public FrmPrincipal()
         {
             InitializeComponent();
-            Nomebemvindo.Text = $"Seja bem vindo {VariableGlobal.Usersession.Nome}";
+            Nomebemvindo.Text = $"Seja bem vindo(a) {VariableGlobal.Usersession.Nome}";
         }
 
         private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)

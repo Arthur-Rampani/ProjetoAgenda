@@ -35,8 +35,8 @@
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
-            Nomebemvindo = new Label();
             agendaToolStripMenuItem = new ToolStripMenuItem();
+            Nomebemvindo = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(359, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -76,45 +76,46 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, usuáriosToolStripMenuItem, agendaToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Size = new Size(130, 22);
             categoriasToolStripMenuItem.Text = "Categorias";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // usuáriosToolStripMenuItem
             // 
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(180, 22);
+            usuáriosToolStripMenuItem.Size = new Size(130, 22);
             usuáriosToolStripMenuItem.Text = "Usuários";
             usuáriosToolStripMenuItem.Click += usuáriosToolStripMenuItem_Click;
-            // 
-            // Nomebemvindo
-            // 
-            Nomebemvindo.AutoSize = true;
-            Nomebemvindo.Location = new Point(201, 61);
-            Nomebemvindo.Name = "Nomebemvindo";
-            Nomebemvindo.Size = new Size(38, 15);
-            Nomebemvindo.TabIndex = 1;
-            Nomebemvindo.Text = "label1";
-            Nomebemvindo.Click += label1_Click;
             // 
             // agendaToolStripMenuItem
             // 
             agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            agendaToolStripMenuItem.Size = new Size(180, 22);
+            agendaToolStripMenuItem.Size = new Size(130, 22);
             agendaToolStripMenuItem.Text = "Agenda";
             agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
+            // 
+            // Nomebemvindo
+            // 
+            Nomebemvindo.AutoSize = true;
+            Nomebemvindo.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Nomebemvindo.Location = new Point(0, 87);
+            Nomebemvindo.Name = "Nomebemvindo";
+            Nomebemvindo.Size = new Size(72, 30);
+            Nomebemvindo.TabIndex = 1;
+            Nomebemvindo.Text = "label1";
+            Nomebemvindo.Click += label1_Click;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(359, 135);
             Controls.Add(Nomebemvindo);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;

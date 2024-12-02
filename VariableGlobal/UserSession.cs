@@ -15,6 +15,7 @@ namespace ProjetoAgenda.VariableGlobal
         private static string _usuario = null;
         private static string _senha = null;
         private static string _nome = null;
+        private static string _contato = null;
         
 
         //Encapsulei a variável para ter controle
@@ -42,6 +43,15 @@ namespace ProjetoAgenda.VariableGlobal
             set
             {
                 _nome = value;
+            }
+        }
+
+        public static string Contato
+        {
+            get { return _contato; }
+            set
+            {
+                _contato = value;
             }
         }
     }

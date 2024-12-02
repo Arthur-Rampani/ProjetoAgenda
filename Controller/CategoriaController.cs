@@ -62,7 +62,7 @@ namespace ProjetoAgenda.Controller
             try
             {
                 //Inserindo a conexão usando a conexão que eu já havia criado
-                 conexao = ConexaoDB.CriarConexao(Usersession.Usuario, Usersession.Senha);
+                 conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
                 //Montei o SELECT que retorna todas as categorias
                 string sql = @"select id_categoria AS 'Código', categoria AS 'Categoria'
@@ -133,7 +133,7 @@ namespace ProjetoAgenda.Controller
             }  
         }
 
-        public bool AlterarCategoria(string categoria, int id_categoria)
+        public bool AlterarCategoria(string categoria, int id_categoria)            
         {
             MySqlConnection conexao = null;
             try

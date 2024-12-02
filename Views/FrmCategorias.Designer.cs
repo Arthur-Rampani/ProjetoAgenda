@@ -52,7 +52,7 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.BackColor = Color.White;
+            btnRegistrar.BackColor = Color.Lime;
             btnRegistrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.Black;
             btnRegistrar.Location = new Point(8, 72);
@@ -119,8 +119,9 @@
             // 
             // btnAlterar
             // 
-            btnAlterar.BackColor = Color.White;
+            btnAlterar.BackColor = Color.FromArgb(255, 128, 0);
             btnAlterar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlterar.ForeColor = Color.White;
             btnAlterar.Location = new Point(12, 222);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(207, 44);
