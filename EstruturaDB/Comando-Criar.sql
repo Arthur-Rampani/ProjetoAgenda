@@ -96,3 +96,58 @@ END;
 //
 
 DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trinsertcontato
+AFTER INSERT ON tbcontato
+FOR EACH ROW
+BEGIN
+INSERT INTO tblog (usuario, data_hora, descricao)
+    VALUES (USER(), CURRENT_TIMESTAMP(),  
+    CONCAT("O contato", NEW.contato, "foi inserido."));
+END;
+//
+
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trlogcontatodelete
+AFTER
+DELETE
+ON tbcontato
+FOR EACH ROW
+BEGIN
+	INSERT INTO tblog(
+    usuario, 
+    data_hora, 
+    descricao)
+    VALUES
+    (USER(),
+	CURRENT_TIMESTAMP(), 
+	CONCAT("O contato ", OLD.contato, " foi excluído.")
+	);
+END;
+//
+
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trupdatecontato
+AFTER
+UPDATE
+ON tbcontato
+FOR EACH ROW
+BEGIN
+	INSERT INTO tblog(
+    usuario, 
+    data_hora, 
+    descricao)
+    VALUES
+    (USER(),
+	CURRENT_TIMESTAMP(), 
+	CONCAT("O contato ", NEW.contato, " foi alterado.")
+	);
+END;
+//
+
+DELIMITER ;
