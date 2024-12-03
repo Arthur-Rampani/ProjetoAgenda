@@ -83,3 +83,16 @@ END;
 //
 
 DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trinsertcategoria2
+AFTER INSERT ON tbcategoria
+FOR EACH ROW
+BEGIN
+INSERT INTO tblog (usuario, data_hora, descricao)
+    VALUES (USER(), CURRENT_TIMESTAMP(),  
+    CONCAT("A categoria", NEW.categoria, "foi inserida."));
+END;
+//
+
+DELIMITER ;

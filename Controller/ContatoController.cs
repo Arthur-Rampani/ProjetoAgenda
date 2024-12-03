@@ -161,7 +161,7 @@ namespace ProjetoAgenda.Controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Erro ao alterar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 
