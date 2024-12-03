@@ -27,7 +27,7 @@ namespace ProjetoAgenda.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            string usuario = Convert.ToString(dgvUsuarios.SelectedRows[0].Cells[0].Value);
+            string usuario = Convert.ToString(dgvUsuarios.SelectedRows[0].Cells[1].Value);
             UsuarioController excluirusuario = new UsuarioController();
             bool resultado = excluirusuario.ExcluirUsuario(usuario);
 
@@ -53,6 +53,10 @@ namespace ProjetoAgenda.Views
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+
+            string usuario = Convert.ToString(dgvUsuarios.SelectedRows[0].Cells[1].Value);
+            UsuarioController alterarusuario = new UsuarioController();
+            alterarusuario.AlterarSenha(txtBoxAlterar.Text, usuario);
 
             UsuarioController controleUsuarios = new UsuarioController();
             DataTable tabela = controleUsuarios.GetUsuarios();

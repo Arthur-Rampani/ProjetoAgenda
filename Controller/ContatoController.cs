@@ -63,10 +63,10 @@ namespace ProjetoAgenda.Controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
                 string sql = @"select id_contato, contato AS 'Contato', telefone AS 'Telefone', categoria AS 'Categoria'
-                               from tbcontato";
+                               from tbcontato where usuario = User();";
 
                 conexao.Open();
 
@@ -136,7 +136,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
 
-                string sql = "UPDATE tbcontato set contato = @contato WHERE id_contato = @id_contato;";
+                string sql = "UPDATE tbcontato set contato = @contato, telefone = @telefone, categoria = @categoria WHERE id_contato = @id_contato;";
 
                 conexao.Open();
 
@@ -144,6 +144,8 @@ namespace ProjetoAgenda.Controller
 
                 comando.Parameters.AddWithValue("@contato", contato);
                 comando.Parameters.AddWithValue("@id_contato", id_contato);
+                comando.Parameters.AddWithValue("@telefone", telefone);
+                comando.Parameters.AddWithValue("@categoria", categoria);
 
 
                 int linhasAfetadas = comando.ExecuteNonQuery();

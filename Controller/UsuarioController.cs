@@ -167,6 +167,10 @@ namespace ProjetoAgenda.Controller
 
                 if (linhasAfetadas > 0)
                 {
+                    string sql2 = $@"DROP USER '{usuario}';";
+                    comando = new MySqlCommand(sql2, conexao);
+
+                    linhasAfetadas = comando.ExecuteNonQuery();
                     MessageBox.Show("Usuário excluído com sucesso!");
                     return true;
                 }
@@ -195,7 +199,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao(VariableGlobal.Usersession.Usuario, VariableGlobal.Usersession.Senha);
 
 
-                string sql = "UPDATE tbcategoria set senha = @senha WHERE usuario = @usuario;";
+                string sql = "UPDATE tbusuarios set senha = @senha WHERE usuario = @usuario;";
 
                 conexao.Open();
 

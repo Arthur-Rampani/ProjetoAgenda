@@ -23,7 +23,8 @@ CREATE TABLE tbcontato(
 id_contato int(30) primary key auto_increment, 
 contato varchar(30) not null, 
 telefone int(30) not null, 
-categoria varchar(30) not null);
+categoria varchar(30) not null, 
+usuario varchar(30) not null);
 
 //Mudar os nomes das tabelas
 select id_categoria AS 'Código', categoria AS 'Categoria'
@@ -36,7 +37,7 @@ INSERT
 ON tbcategoria
 FOR EACH ROW
 BEGIN
-	SET NEW.usuario = CURRENT_USER();
+	SET NEW.usuario = USER();
 END;
 //
 
@@ -91,7 +92,20 @@ FOR EACH ROW
 BEGIN
 INSERT INTO tblog (usuario, data_hora, descricao)
     VALUES (USER(), CURRENT_TIMESTAMP(),  
-    CONCAT("A categoria", NEW.categoria, "foi inserida."));
+    CONCAT("A categoria ", NEW.categoria, " foi inserida."));
+END;
+//
+
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER trinsertcontato2
+BEFORE
+INSERT
+ON tbcontato
+FOR EACH ROW
+BEGIN
+	SET NEW.usuario = USER();
 END;
 //
 
@@ -104,7 +118,7 @@ FOR EACH ROW
 BEGIN
 INSERT INTO tblog (usuario, data_hora, descricao)
     VALUES (USER(), CURRENT_TIMESTAMP(),  
-    CONCAT("O contato", NEW.contato, "foi inserido."));
+    CONCAT("O contato ", NEW.contato, " foi inserido."));
 END;
 //
 
